@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg {
+    width: 100%;
+    height: 100vh;
+
+    background-color: black;
+
+    background-image: url("../img/그림1.jpg");
+    background-size: contain;     /* 이미지 전체 보임 */
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    color: white;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+#세부미-toggle:checked ~ .overlay,
+#토마-toggle:checked ~ .overlay {
+  display: block;
+}
+
+.popup {
+  position: fixed;
+  /* z-index: 20; */
+
+  display: none;               /* 기본 숨김 */
+
+  width: 600px;
+  height: 600px;
+    
+  margin-left: 10%;
+
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.popup img {
+  
+  height: 115%;    /* 팝업 박스 높이에 맞춤 */
+  object-fit: contain; /* 이미지 비율 유지 */
+  
+}
+
+
+
+.토마스펙-popup {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  margin-top: 100px;
+  margin-left: 250px;
+}
+
+.세부미스펙-popup {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  margin-top: 80px;
+  margin-left: 700px;
+}
+
+#토마-toggle:checked ~ .토마스펙-popup,
+#세부미-toggle:checked ~ .세부미스펙-popup {
+    display: flex;           /* 체크 시 flex로 표시 */
+}
+
+
+
+/* 체크박스 체크 시 팝업 표시 */
+/* #세부미-toggle:checked ~ .dim, */
+#세부미-toggle:checked ~ .세부미-popup,
+#토마-toggle:checked ~ .토마-popup,
+#back-toggle:checked ~ .back-popup {
+  display: block;
+}
+
+.back, .세부미, .토마 {
+  width: 180px;
+  height: 100px;
+
+  background-image: url("../img/만두.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  cursor: pointer;
+
+  color: black;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+
+  position: absolute;
+  top: 20px;
+  left: 30px;
+
+  filter:
+    drop-shadow(4px 0 0 rgb(202, 0, 0))
+    drop-shadow(-3px 0 0  rgb(202, 0, 0))
+    drop-shadow(0 4px 0  rgb(202, 0, 0))
+    drop-shadow(0 -3px 0  rgb(202, 0, 0));
+
+  position: absolute;
+  z-index: 200;
+}
+
+.back { top: 20px; left: 30px; }
+.세부미 { top: 150px; left: 30px; }
+.토마 { top: 280px; left: 30px;}
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro-page {
+    background-image: url("../img/background_3.gif");
+    opacity: 93%;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: yellow;
+}
+
+.next-page {
+    margin-top: 20px;
+    width: 150px;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 1s;
+}
+
+.next-link {
+    pointer-events: none;
+}
+
+/* 텍스트 박스 고정 */
+#typing {
+    font-size: 1.2rem;
+    line-height: 2;
+
+    /* width: 800px;
+    height: 280px;
+
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: center;
+     */
+
+    white-space: pre-line;
+    text-align: center;
+
+    width: 800px;
+    height: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+
+/* 깜빡이는 커서 */
+#typing::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
